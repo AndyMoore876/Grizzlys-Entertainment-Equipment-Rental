@@ -1,8 +1,13 @@
+package model;
 
-public class Equipment implements Serializable{
+import javax.swing.*;
+import java.io.Serializable;
+import java.util.Date;
+
+public class Equipment implements Serializable {
 
     private String equipmentId;
-    private Sting equipmentName;
+    private String equipmentName;
     private String equipmentType;
     private String eventId;
     private Boolean rented;
@@ -19,11 +24,11 @@ public class Equipment implements Serializable{
         this.rented = null;
         this.dateRented = null;
         this.returnDate = null;
-        this.costPerDay = null;
-        this.totalCost = null;
+        this.costPerDay = 0;
+        this.totalCost = 0;
     }
 
-    public Equipment(String equipmentId, Sting equipmentName, String equipmentType, String eventId, Boolean rented, Date dateRented, Date returnDate, float costPerDay, float totalCost) {
+    public Equipment(String equipmentId, String equipmentName, String equipmentType, String eventId, Boolean rented, Date dateRented, Date returnDate, float costPerDay, float totalCost) {
         this.equipmentId = equipmentId;
         this.equipmentName = equipmentName;
         this.equipmentType = equipmentType;
@@ -44,11 +49,11 @@ public class Equipment implements Serializable{
         this.equipmentId = equipmentId;
     }
 
-    public Sting getEquipmentName() {
+    public String getEquipmentName() {
         return equipmentName;
     }
 
-    public void setEquipmentName(Sting equipmentName) {
+    public void setEquipmentName(String equipmentName) {
         this.equipmentName = equipmentName;
     }
 
@@ -125,9 +130,14 @@ public class Equipment implements Serializable{
                 '}';
     }
 
-    public void rent(String customerID, String eventId){
-        if (this.rented == true){
-            JOptionPane.
+    //to be updated for booking in advanced while booked
+    public void rent(String customerID, String eventId, Date startDate, Date returnDate){
+        if (this.rented){
+            JOptionPane.showMessageDialog(null,"Equipment already rented for the selected period and cannot be booked until returned.");
+        } else {
+            this.dateRented = startDate;
+            this.returnDate = returnDate;
+            this.rented = true;
         }
     }
 }
