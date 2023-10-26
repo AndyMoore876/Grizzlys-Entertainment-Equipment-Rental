@@ -6,6 +6,10 @@ public class User {
     protected String passwordHash;
     protected Boolean loggedIn = false;
 
+    public User(){
+        passwordHash = null;
+    }
+
     public User(String passwordHash, Boolean loggedIn) {
         this.passwordHash = passwordHash;
         this.loggedIn = loggedIn;

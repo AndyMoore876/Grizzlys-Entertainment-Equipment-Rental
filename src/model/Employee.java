@@ -7,10 +7,12 @@ public class Employee extends User implements Serializable {
     public String firstName;
     public String lastName;
 
-    public Employee(String employeeId, String firstName, String lastName) {
+    public Employee(String employeeId, String firstName, String lastName, Boolean loggedIn, String passwordHash) {
         this.employeeId = employeeId;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.loggedIn = loggedIn;
+        this.passwordHash = passwordHash;
     }
 
     public String getEmployeeId() {
