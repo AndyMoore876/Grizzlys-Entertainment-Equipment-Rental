@@ -4,11 +4,19 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Event implements Serializable {
-    public String eventId;
-    public String eventName;
-    public LocalDate startDate;
-    public LocalDate endDate;
-    public String customerId;
+    private String eventId;
+    private String eventName;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private String customerId;
+
+    public Event(){
+        this.eventId = "eventId";
+        this.eventName = "eventName";
+        this.startDate = null;
+        this.endDate = null;
+        this.customerId = "customerId";
+    }
 
     public Event(String eventId, String eventName, LocalDate startDate, LocalDate endDate, String customerId) {
         this.eventId = eventId;

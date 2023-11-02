@@ -5,15 +5,28 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Transaction {
-    public String transactionId;
-    public LocalDate transactionDate;
-    public LocalTime transactionTime;
-    public ArrayList<String> equipmentIdList;
-    public ArrayList<String> eventIdList;
-    public String customerId;
-    public String employeeId;
+    private String transactionId;
+    private LocalDate transactionDate;
+    private LocalTime transactionTime;
+    private ArrayList<String> equipmentIdList;
+    private ArrayList<String> eventIdList;
+    private String customerId;
+    private String employeeId;
+    private float totalAmount;
 
-    public Transaction(String transactionId, LocalDate transactionDate, LocalTime transactionTime, ArrayList<String> equipmentIdList, ArrayList<String> eventIdList, String customerId, String employeeId) {
+
+    public Transaction(){
+        this.transactionId = "transactionId";
+        this.transactionDate = null;
+        this.transactionTime = null;
+        this.equipmentIdList = null;
+        this.eventIdList = null;
+        this.customerId = "customerId";
+        this.employeeId = "employeeId";
+        this.totalAmount = 0;
+    }
+
+    public Transaction(String transactionId, LocalDate transactionDate, LocalTime transactionTime, ArrayList<String> equipmentIdList, ArrayList<String> eventIdList, String customerId, String employeeId, float totalAmount) {
         this.transactionId = transactionId;
         this.transactionDate = transactionDate;
         this.transactionTime = transactionTime;
@@ -21,8 +34,16 @@ public class Transaction {
         this.eventIdList = eventIdList;
         this.customerId = customerId;
         this.employeeId = employeeId;
+        this.totalAmount = totalAmount;
     }
 
+    public float getAmount() {
+        return totalAmount;
+    }
+
+    public void setAmount(float totalAmount) {
+        this.totalAmount = totalAmount;
+    }
     public String getTransactionId() {
         return transactionId;
     }

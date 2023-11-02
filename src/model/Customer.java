@@ -4,12 +4,21 @@ import java.io.Serializable;
 
 public class Customer implements Serializable{
 
-    public String customerId;
-    public String firstName;
-    public String lastName;
-    public String phoneNumber;
-    public String email;
-    public float balance;
+    private String customerId;
+    private String firstName;
+    private String lastName;
+    private String phoneNumber;
+    private String email;
+    private float balance;
+
+    public Customer(){
+        this.customerId = "customerId";
+        this.firstName = "firstName";
+        this.lastName = "lastName";
+        this.phoneNumber = "phoneNumber";
+        this.email = "email";
+        this.balance = 0;
+    }
 
     public Customer(String customerId, String firstName, String lastName, String phoneNumber, String email, float balance) {
         this.customerId = customerId;
@@ -75,8 +84,4 @@ public class Customer implements Serializable{
     public void minusFromBalance(float amount){
         this.balance-=amount;
     }
-
-    //createEvent(){}
-
-
 }

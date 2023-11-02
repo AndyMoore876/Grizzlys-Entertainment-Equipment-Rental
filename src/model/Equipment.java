@@ -15,6 +15,7 @@ public class Equipment implements Serializable {
     private Date returnDate;
     private float costPerDay;
     private float totalCost;
+    private String customerId;
 
     public Equipment() {
         this.equipmentId = null;
@@ -26,12 +27,14 @@ public class Equipment implements Serializable {
         this.returnDate = null;
         this.costPerDay = 0;
         this.totalCost = 0;
+        this.customerId=null;
     }
 
-    public Equipment(String equipmentId, String equipmentName, String equipmentType, String eventId, Boolean rented, Date dateRented, Date returnDate, float costPerDay, float totalCost) {
+    public Equipment(String equipmentId, String equipmentName, String equipmentType, String customerId, String eventId, Boolean rented, Date dateRented, Date returnDate, float costPerDay, float totalCost) {
         this.equipmentId = equipmentId;
         this.equipmentName = equipmentName;
         this.equipmentType = equipmentType;
+        this.customerId = customerId;
         this.eventId = eventId;
         this.rented = rented;
         this.dateRented = dateRented;
@@ -40,6 +43,13 @@ public class Equipment implements Serializable {
         this.totalCost = totalCost;
     }
 
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
     //setters and getters
     public String getEquipmentId() {
         return equipmentId;

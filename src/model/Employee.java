@@ -3,9 +3,17 @@ package model;
 import java.io.Serializable;
 
 public class Employee extends User implements Serializable {
-    public String employeeId;
-    public String firstName;
-    public String lastName;
+    private String employeeId;
+    private String firstName;
+    private String lastName;
+
+    public Employee(){
+        this.employeeId = "employeeId";
+        this.firstName = "firstName";
+        this.lastName = "lastName";
+        this.loggedIn = false;//will not be stored in the database will just be used
+        this.passwordHash = "passwordHash";
+    }
 
     public Employee(String employeeId, String firstName, String lastName, Boolean loggedIn, String passwordHash) {
         this.employeeId = employeeId;
