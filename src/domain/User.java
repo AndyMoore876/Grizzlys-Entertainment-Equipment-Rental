@@ -1,4 +1,4 @@
-package model;
+package domain;
 
 
 
@@ -31,7 +31,4 @@ public class User {
         this.loggedIn = loggedIn;
     }
 
-    protected void logIn(){
-
-    }
 }

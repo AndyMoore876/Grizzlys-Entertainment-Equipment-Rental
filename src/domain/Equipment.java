@@ -1,4 +1,4 @@
-package model;
+package domain;
 
 import javax.swing.*;
 import java.io.Serializable;
@@ -14,7 +14,6 @@ public class Equipment implements Serializable {
     private Date dateRented;
     private Date returnDate;
     private float costPerDay;
-    private float totalCost;
     private String customerId;
 
     public Equipment() {
@@ -26,11 +25,10 @@ public class Equipment implements Serializable {
         this.dateRented = null;
         this.returnDate = null;
         this.costPerDay = 0;
-        this.totalCost = 0;
         this.customerId=null;
     }
 
-    public Equipment(String equipmentId, String equipmentName, String equipmentType, String customerId, String eventId, Boolean rented, Date dateRented, Date returnDate, float costPerDay, float totalCost) {
+    public Equipment(String equipmentId, String equipmentName, String equipmentType, String customerId, String eventId, Boolean rented, Date dateRented, Date returnDate, float costPerDay) {
         this.equipmentId = equipmentId;
         this.equipmentName = equipmentName;
         this.equipmentType = equipmentType;
@@ -40,7 +38,6 @@ public class Equipment implements Serializable {
         this.dateRented = dateRented;
         this.returnDate = returnDate;
         this.costPerDay = costPerDay;
-        this.totalCost = totalCost;
     }
 
     public String getCustomerId() {
@@ -115,16 +112,6 @@ public class Equipment implements Serializable {
         this.costPerDay = costPerDay;
     }
 
-    public float getTotalCost() {
-        return totalCost;
-    }
-
-    public void setTotalCost(float totalCost) {
-        this.totalCost = totalCost;
-    }
-    //end of setters and getters
-
-
     @java.lang.Override
     public java.lang.String toString() {
         return "Equipment{" +
@@ -136,18 +123,6 @@ public class Equipment implements Serializable {
                 ", dateRented=" + dateRented +
                 ", returnDate=" + returnDate +
                 ", costPerDay=" + costPerDay +
-                ", totalCost=" + totalCost +
                 '}';
-    }
-
-    //to be updated for booking in advanced while booked
-    public void rent(String customerID, String eventId, Date startDate, Date returnDate){
-        if (this.rented){
-            JOptionPane.showMessageDialog(null,"Equipment already rented for the selected period and cannot be booked until returned.");
-        } else {
-            this.dateRented = startDate;
-            this.returnDate = returnDate;
-            this.rented = true;
-        }
     }
 }
